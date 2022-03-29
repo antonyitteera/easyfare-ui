@@ -347,6 +347,18 @@
 
 
     document.getElementById('create_route').addEventListener('click', async () => {
+      // console.log(document.getElementsByClassName("CodeMirror-code"));
+      text = '';
+      for(i = 0; i < document.getElementsByClassName("CodeMirror-code")[1].children.length; i++){ console.log(i)
+          line = document.getElementsByClassName("CodeMirror-code")[1].children[i].textContent;
+          line = line.substring(1);
+          if(i > 8){
+              line = line.substring(1);
+          }
+          text = text + line;
+      }
+      console.log(text);
+      
       console.log("GONE"); const response = await fetch("https://reqbin.com/echo/post/json", {
         method: 'POST',
         headers: {

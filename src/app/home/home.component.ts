@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
 
   goToOperatorDashboard(){
     console.log("dasda");
+    window.open(
+      'http://localhost:3000/d/PgjCj-Pnk/operator_dashboard?orgId=1',
+      '_blank' // <- This is what makes it open in a new window.
+    );
   }
 
   goToRouteCreator(){
