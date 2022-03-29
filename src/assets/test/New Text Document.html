@@ -443,29 +443,49 @@
             })
             console.log(text);
 
+            var busno = document.getElementById('busno').value;
+            var routeno = document.getElementById('routeno').value;
             console.log(document.getElementById('busno').value);
             console.log(document.getElementById('routeno').value);
 
-
-            console.log("GONE"); const response = await fetch("https://reqbin.com/echo/post/json", {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              body: `{
-      "Id": 78912,
-      "Customer": "Jason Sweet",
-      "Quantity": 1,
-      "Price": 18.00
-      }`,
-            });
+            console.log(text);
+      
+      console.log("GONE"); const response = await fetch(`http://localhost:8082/api/v1/createroute?busnum=${busno}&routenum=${routeno}`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          mode:'no-cors'
+        },
+        body: text
+      });
 
 
 
-            response.json().then(data => {
-              console.log(data);
-            });
+      response.json().then(data => {
+        console.log(data);
+      });
+
+
+      //       console.log("GONE"); const response = await fetch("https://reqbin.com/echo/post/json", {
+      //         method: 'POST',
+      //         headers: {
+      //           'Accept': 'application/json',
+      //           'Content-Type': 'application/json'
+      //         },
+      //         body: `{
+      // "Id": 78912,
+      // "Customer": "Jason Sweet",
+      // "Quantity": 1,
+      // "Price": 18.00
+      // }`,
+      //       });
+
+
+
+      //       response.json().then(data => {
+      //         console.log(data);
+      //       });
 
 
 
